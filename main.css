@@ -1,0 +1,540 @@
+* {
+  box-sizing: border-box;
+}
+
+.contact {
+  background-color: black;
+  padding: 20px;
+}
+
+.header {
+  color: #0FF;
+}
+
+.footer {
+  background-color: #f00;
+}
+
+.copyrigh {
+  color: #f00;
+}
+
+.socail {
+  color: orange;
+}
+
+.parent {
+  padding: 20px;
+}
+.parent .child {
+  font-size: 20px;
+}
+.parent .child .p {
+  margin-top: 20px;
+}
+.parent .p {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.parent-one .child, .parent-two .child {
+  width: 300px;
+}
+
+.parent > .child {
+  font-size: 20px;
+}
+.parent > .test {
+  font-size: 20px;
+}
+
+.parent > .child {
+  font-size: 20px;
+}
+.parent .test {
+  font-size: 20px;
+}
+
+.parent > .child {
+  font-size: 20px;
+}
+.parent + p {
+  font-size: 30px;
+}
+
+.parent > {
+  margin: 20px;
+}
+.parent > .elem {
+  align-items: center;
+}
+.parent > .p {
+  align-self: auto;
+}
+
+.box .title {
+  font-size: 20px;
+}
+.box .dec {
+  font-size: 22px;
+}
+.box.red {
+  color: #f00;
+}
+.box.green {
+  color: aqua;
+}
+.box:hover {
+  background-color: #f00;
+}
+.box:hover .title {
+  font-weight: 300;
+}
+:not(.box) {
+  font-weight: 200;
+}
+[dir=rtl] .box {
+  direction: rtl;
+}
+
+.box {
+  font-size: 20px;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 20px;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.main-box, .qqs, .ads {
+  background-color: #f00;
+}
+
+.ads {
+  font-size: 22px;
+}
+
+.qqs {
+  font-size: 24px;
+  color: white;
+}
+
+.arrow-div, .boxxx, .bxx {
+  background-color: #f00;
+  padding: 2px;
+  border: 1px solid #ccc;
+}
+
+.bxx {
+  font-size: 24px;
+  color: white;
+}
+
+.page {
+  background-color: #444;
+  color: #fff;
+}
+
+.arrow-div {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+  position: relative;
+  margin: 50px auto;
+}
+.arrow-div::before {
+  content: "";
+  position: absolute;
+  border: 20px solid transparent;
+  /*@else{
+      // @error "this direction qsq not valid";
+      @error "this direction  not valid";
+  }*/
+}
+
+.add-yassindev {
+  font-size: 20px;
+  background-image: url(`img/yassindev.png`);
+  position: "right";
+}
+
+.add-yassindev-un51v0r {
+  font-size: 22px;
+  background-image: url(`img/yassindev.png`);
+  color: #0FF;
+}
+
+/* this comment will not show in css file but not un comressed mode*/
+/*! this comment will not show in css file & compressed mode*/
+/* myname them is webyass*/
+ul.link {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+.circle-100 {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  color: white;
+}
+
+.center-circle {
+  border-radius: 50%;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: gray;
+}
+
+.class-1 {
+  font-size: 11px;
+}
+
+.class-2 {
+  font-size: 12px;
+}
+
+.class-3 {
+  font-size: 13px;
+}
+
+.class-4 {
+  font-size: 14px;
+}
+
+.class-5 {
+  font-size: 15px;
+}
+
+.class-6 {
+  font-size: 16px;
+}
+
+.class-7 {
+  font-size: 17px;
+}
+
+.class-8 {
+  font-size: 18px;
+}
+
+.class-9 {
+  font-size: 19px;
+}
+
+.class-10 {
+  font-size: 20px;
+}
+
+.circle-100 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #f00;
+}
+
+.circle-200 {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #f00;
+}
+
+.circle-300 {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: #f00;
+}
+
+.circle-400 {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background-color: #f00;
+}
+
+.circle-500 {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background-color: #f00;
+}
+
+.circle-600 {
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background-color: #f00;
+}
+
+.circle-700 {
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background-color: #f00;
+}
+
+.circle-800 {
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  background-color: #f00;
+}
+
+.circle-900 {
+  width: 900px;
+  height: 900px;
+  border-radius: 50%;
+  background-color: #f00;
+}
+
+.red-theme .product {
+  background-color: white;
+  border-bottom: 2px solid red;
+}
+.red-theme .product .title {
+  color: red;
+  font-weight: bold;
+}
+
+.green-theme .product {
+  background-color: white;
+  border-bottom: 2px solid green;
+}
+.green-theme .product .title {
+  color: green;
+  font-weight: bold;
+}
+
+.blue-theme .product {
+  background-color: white;
+  border-bottom: 2px solid blue;
+}
+.blue-theme .product .title {
+  color: blue;
+  font-weight: bold;
+}
+
+.facebook1 {
+  background-color: blue;
+  color: white;
+}
+.facebook1::before {
+  content: "facebook1";
+}
+
+.youtube1 {
+  background-color: red;
+  color: white;
+}
+.youtube1::before {
+  content: "youtube1";
+}
+
+.github1 {
+  background-color: black;
+  color: white;
+}
+.github1::before {
+  content: "github1";
+}
+
+.one {
+  font-size: 20px;
+  background-color: red;
+  color: white;
+  padding: 10px;
+}
+
+.two {
+  font-size: 15px;
+  background-color: green;
+  color: white;
+  padding: 7.5px;
+}
+
+.three {
+  font-size: 22px;
+  background-color: orange;
+  color: white;
+  padding: 11px;
+}
+
+.width-1 {
+  width: 100px;
+  height: 50px;
+}
+
+.width-2 {
+  width: 200px;
+  height: 100px;
+}
+
+.width-3 {
+  width: 300px;
+  height: 150px;
+}
+
+.width-4 {
+  width: 400px;
+  height: 200px;
+}
+
+.width-5 {
+  width: 500px;
+  height: 250px;
+}
+
+.width-6 {
+  width: 600px;
+  height: 300px;
+}
+
+.width-7 {
+  width: 700px;
+  height: 350px;
+}
+
+.width-8 {
+  width: 800px;
+  height: 400px;
+}
+
+.width-9 {
+  width: 900px;
+  height: 450px;
+}
+
+.width-10 {
+  width: 1000px;
+  height: 500px;
+}
+
+.col-1 {
+  width: 8.3333333333%;
+}
+
+.col-2 {
+  width: 16.6666666667%;
+}
+
+.col-3 {
+  width: 25%;
+}
+
+.col-4 {
+  width: 33.3333333333%;
+}
+
+.col-5 {
+  width: 41.6666666667%;
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.col-7 {
+  width: 58.3333333333%;
+}
+
+.col-8 {
+  width: 66.6666666667%;
+}
+
+.col-9 {
+  width: 75%;
+}
+
+.col-10 {
+  width: 83.3333333333%;
+}
+
+.col-11 {
+  width: 91.6666666667%;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+.element {
+  width: 200px;
+  height: 100px;
+}
+
+.micro {
+  width: 180px;
+}
+
+.black-oveplat {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+@-webkit-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes go-up {
+  from {
+    bottom: 0;
+  }
+  to {
+    bottom: 100px;
+  }
+}
+@keyframes go-up {
+  from {
+    bottom: 0;
+  }
+  to {
+    bottom: 100px;
+  }
+}
+@media (max-width: 767px) {
+  .media {
+    font-size: 15px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .media {
+    font-size: 18px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .media {
+    font-size: 20px;
+  }
+}
+@media (min-width: 1200px) {
+  .media {
+    font-size: 22px;
+  }
+}/*# sourceMappingURL=main.css.map */

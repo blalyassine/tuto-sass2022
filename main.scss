@@ -1,0 +1,465 @@
+// import global  rules 
+// @import url(/sass/layout/_golobal-rule.scss); # methed 9dima
+@use './sass/layout/golobal-rule';
+
+// import pages
+
+@use './sass/layout/page/contact';
+
+// imort variables
+@use './sass/variables/color' as *;  // use as^* or color.$color1
+
+@use './sass/functions/function' as *;
+ //*part mixing
+// import Mixins
+@use "./sass/helpers/mixin" as *;
+
+//global value
+$caltcolor:#0FF;
+
+.header{
+    color: $caltcolor;
+}
+
+.footer{
+    //***variable scoup
+    //$caltcolor:#f00;
+    $caltcolor:#f00 !global; // this color est global
+    background-color: $caltcolor;
+}
+
+.copyrigh{
+    color: $caltcolor;
+}
+
+
+.socail{
+    color: $color1;
+}
+
+//**nestng an parent element
+.parent{
+    padding: 20px;
+    .child{
+        font-size: 20px;
+        .p{
+            margin-top: 20px;
+        }
+    }
+    .p{
+        font-size: 20px;
+        font-weight: 700;
+    }
+}
+
+.parent-one,.parent-two{
+    .child{
+        width: 300px;
+    }
+}
+
+.parent >{
+    .child{
+        font-size: 20px;
+    }
+    .test{
+        font-size: 20px;
+    }
+}
+.parent {
+    > .child{
+        font-size: 20px;
+    }
+    .test{
+        font-size: 20px;
+    }
+}
+
+.parent{
+    >.child{
+        font-size: 20px;
+    }
+    + p{
+        font-size: 30px;
+    }
+}
+
+.parent{
+    >{
+        margin: 20px;
+    }
+    >{
+        .elem{
+            align-items: center;
+        }
+        .p{
+            align-self: auto;
+        }
+    }
+}
+.box{
+    .title{
+        font-size: 20px;
+    }
+    .dec{
+        font-size: 22px;
+    }
+    &.red{
+        color: #f00;
+    }
+    &.green{
+        color: aqua;
+    }
+    &:hover{
+        background-color: #f00;
+    }
+    &:hover .title{
+        font-weight: 300;
+    }
+    :not(&){
+        font-weight: 200;
+    }
+    [dir="rtl"] &{
+        direction: rtl;
+    }
+}
+
+// Property Declarations And Placeholder
+.box{
+    font-size: 20px;
+    font: {
+        size: 15px;
+        weight:bold;
+    }
+    padding: 20px;
+    margin: auto{
+        top:20px;
+        bottom:15px;
+    };
+}
+
+
+.main-box{
+    background-color: #f00;
+}
+.ads{
+    @extend .main-box;
+    font-size: 22px;
+}
+.qqs{
+    @extend .main-box;
+    font-size: 24px;
+    color: white;
+}
+
+%main-box-placeholder{
+    background-color: #f00;
+    padding: 2px;
+    border: 1px solid #ccc;
+}
+.bxx{
+    @extend %main-box-placeholder;
+    font-size: 24px;
+    color: white;
+}
+
+//**Control Flow - If And Else
+// $theme:"light";
+$theme:"dark";
+.page{
+    @if $theme == 'light' {
+        background-color: white;
+        color: #444;
+    }@else{
+        background-color: #444;
+        color: #fff;
+    }
+}
+
+$rounded:false;
+.boxxx{
+    @extend %main-box-placeholder;
+    border-radius: if($rounded,5px,null);
+}
+
+//**Create Triangle With If And Else
+
+$direction:"qsq";
+.arrow-div{
+    @extend %main-box-placeholder;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    position: relative;
+    margin: 50px auto;
+    &::before{
+        content: '';
+        position: absolute;
+        border: 20px solid transparent;
+        @if ($direction=="top"){
+            top:-40px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-bottom-color:red ;
+        }@else if($direction == "right"){
+            right: -40px;
+            top:    50%;
+            transform: translateY(-50%);
+            border-left-color:red ; 
+        }@else if($direction == "left"){
+            left: -40px;
+            top:    50%;
+            transform: translateY(-50%);
+            border-right-color:red ; 
+        }
+        @else if($direction == "bottom"){
+            bottom: -40px;
+            left:    50%;
+            transform: translateX(-50%);
+            border-top-color:red ; 
+        }/*@else{
+            // @error "this direction #{$direction} not valid";
+            @error "this direction  not valid";
+        }*/
+    }
+}
+
+
+//**** Interpolation
+
+$company:"yassindev";
+$position:"right";
+
+.add-#{$company}{
+    font-size: 20px;
+    background-image: url(`img/#{$company}.png`);
+    position: $position;
+}
+
+.add-#{$company}-#{unique-id()}{
+    font-size: 22px;
+    background-image: url(`img/#{$company}.png`);
+    color: #0FF;
+}
+
+//** Comments And Documenting
+
+// this comment will not show in css file   // this comment affiche only in ficher scss
+/* this comment will not show in css file but not un comressed mode*/  // this coment affiche only in ficher css
+/*! this comment will not show in css file & compressed mode*/  // this comment affiche all (ficher scss & compressed
+
+
+$sass:"webyass";
+/* myname them is #{$sass}*/
+
+//**- Mixin And Include
+
+ul.link{
+    @include list-reset;
+}
+
+.circle-100{
+    @include circle(100px);
+    background-color:red;
+    color: white;
+}
+
+.center-circle{
+    @include circle(400px);
+    @include center;
+    background-color: gray;
+}
+
+
+//*** - Loop - For
+
+@for $i from 1 through 10{
+    .class-#{$i}{
+        font-size:  #{10px + $i};
+    }
+}
+
+$dimention:0;
+
+@mixin bg-color-red {
+    background-color: #f00;
+}
+@for $i from 1 to 10 {
+    .circle-#{100+$dimention}{
+        width: $dimention+100px;
+        height: $dimention+100px;
+        border-radius: 50%;
+        @include bg-color-red;
+    }
+    $dimention:$dimention+100;
+}
+
+//***  - Loop - Each And Maps
+$themes:red,green,blue;
+@each $theme in $themes{
+    .#{$theme}-theme{
+        .product{
+            background-color: white;
+            border-bottom: 2px solid $theme;
+            .title{
+                color:$theme;
+                font-weight:bold;
+            }
+        }
+    }
+}
+
+$socails:(
+    'facebook1':blue,
+    'youtube1':red,
+    'github1':black
+    );
+@each $name,$color in $socails{
+    .#{$name}{
+        background-color: $color;
+        color: white;
+        &::before{
+            content: $name;
+        }
+    }
+}
+//** Loop - Each And Maps*/
+$classes:
+'one' 20px red,
+'two' 15px  green,
+'three' 22px orange;
+
+@each $class,$font,$color in $classes{
+    .#{$class}{
+        font-size: $font;
+        background-color: $color;
+        color: white;
+        padding: $font / 2;
+    }
+}
+
+$start:1;
+
+@while $start <= 10 {
+    .width-#{$start}{
+        width: $start*100px;
+        height: ($start*100px)/2;
+    }
+    $start:$start+1;
+}
+//** create grid system
+$grid_cols:12;
+@for $i from 1 through $grid_cols{
+    .col-#{$i}{
+        width: percentage($i / $grid_cols);
+    }
+}
+
+//*** Function
+
+$width:200px;
+.element{
+    width: $width;
+    height: half($width);
+}
+
+.micro {
+    width: sum(50px, 30px, 100px);
+  }
+  
+
+//***- Practice Mixin With Content
+
+@mixin overplay($color,$opacity) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color,$opacity);
+    
+}
+
+.black-oveplat{
+    @include overplay(black, 0.5)
+}
+///
+/// 
+/// 
+@mixin keyF($anim-name) {
+    @-webkit-keyframes #{$anim-name} {
+      @content;
+    }
+    @keyframes #{$anim-name} {
+      @content;
+    }
+  }
+
+@include keyF(fade-in) {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @include keyF(go-up) {
+    from {
+      bottom: 0;
+    }
+    to {
+      bottom: 100px;
+    }
+  }
+
+//**** Practice Create Media Queries Mixin 
+
+@mixin breakpoints($point) {
+    @if $point == mobile {
+      @media (max-width: 767px) {
+        @content;
+      }
+    } @else if $point == small {
+      @media (min-width: 768px) and (max-width: 991px) {
+        @content;
+      }
+    } @else if $point == medium {
+      @media (min-width: 992px) and (max-width: 1199px) {
+        @content;
+      }
+    } @else if $point == large {
+      @media (min-width: 1200px) {
+        @content;
+      }
+    }
+  }
+
+// If Condition + Mixin + Content
+
+.media {
+    @include breakpoints(mobile) {
+      font-size: 15px;
+    }
+    @include breakpoints(small) {
+      font-size: 18px;
+    }
+    @include breakpoints(medium) {
+      font-size: 20px;
+    }
+    @include breakpoints(large) {
+      font-size: 22px;
+    }
+  }
+
+  //*** The End And How To Master SASS 
+
+
+//   بعض ال Repositories الخاصة بال SASS
+
+//   https://github.com/7ninjas/scss-mixins
+//   https://github.com/drublic/Sass-Mixins
+//   https://github.com/yannickcr/Sass-mixins
+//   https://github.com/huanz/mixins

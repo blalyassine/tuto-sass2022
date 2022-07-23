@@ -1,0 +1,19 @@
+/// functio to get elemt
+/// 
+/// @param {size}
+/// element width 
+///  @return {int}
+/// return elemnt height witdh/2
+
+@function half($size){
+    @return $size/2;
+}
+
+@function sum($numbers...) {
+    $sum: 0;
+    @each $number in $numbers {
+      $sum: $sum + $number;
+    }
+    @return $sum;
+  }
+  
